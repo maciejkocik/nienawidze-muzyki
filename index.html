@@ -8,6 +8,9 @@
 </head>
 <body>
     <style>
+        *{
+            transition: all 1s;
+        }
         body{
             background:black;
             padding:0;
@@ -29,6 +32,16 @@
             margin:0;
             flex-direction: column;
         }
+        video{
+            height: 480px;
+            width: 852px;
+        }
+        @media (max-width:1000px){
+            video{
+                height:240px;
+                width:426px;
+            }
+        }
     </style>
 
     <div class="flex-container">
@@ -36,7 +49,7 @@
             <a href="https://pl.anarchistlibraries.net/library/ted-kaczynski-spoleczenstwo-przemyslowe-i-jego-przyszlosc">🇵🇱</a>
             | <a href="http://editions-hache.com/essais/pdf/kaczynski2.pdf">🇬🇧</a>
         </p>
-            <video height="480" width="852" controls>
+            <video controls>
                 <source src="1.mp4" type="video/mp4">
             </video>
     </div>
