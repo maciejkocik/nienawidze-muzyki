@@ -6,22 +6,19 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>nienawidze muzyki</title>
 </head>
+
 <body>
     <style>
-        *{
-            transition: all 1s;
-        }
         body{
             background:black;
             padding:0;
             margin:0;
             text-align: center;
         }
-        p, a{
-            font-size:36px;
-            font-family: "Comic Sans MS";
-            text-decoration: none;
-            color:red;
+        #link{
+            font-size:48px;
+            z-index:1;
+            background:white;
         }
         .flex-container{
             display:flex;
@@ -33,25 +30,44 @@
             flex-direction: column;
         }
         video{
-            height: 480px;
-            width: 852px;
+            height: 100vh;
+            width: 100vw;
+            position:absolute;
+            top:0;
+            left:0;
         }
-        @media (max-width:1000px){
-            video{
-                height:240px;
-                width:426px;
-            }
-        }
+
     </style>
 
-    <div class="flex-container">
-        <p>
-            <a href="https://pl.anarchistlibraries.net/library/ted-kaczynski-spoleczenstwo-przemyslowe-i-jego-przyszlosc">🇵🇱</a>
-            | <a href="http://editions-hache.com/essais/pdf/kaczynski2.pdf">🇬🇧</a>
-        </p>
-            <video controls>
-                <source src="1.mp4" type="video/mp4">
-            </video>
+    <div class="flex-container" id="video-container">
+        //// "Industrial Society and Its Future" by Ted Kaczynski
+        <div id="link">
+            <a href="https://pl.anarchistlibraries.net/library/ted-kaczynski-spoleczenstwo-przemyslowe-i-jego-przyszlosc" target="_blank">
+            CLICK to apologize!<br>
+            CLICK to be saved!<br>
+            CLICK to forgive!<br>
+            CLICK to forget!<br>
+            CLICK to be pure! <br>
+        </div>
+
+            <div>
+                <video id="ted" muted>
+                    <source src="1.mp4" type="video/mp4">
+                </video>
+            </div>    
     </div>
+<script>
+const video = document.getElementById('ted');
+const btn = document.getElementById('video-container');
+
+btn.addEventListener('click', () => {
+  if (video.muted) {
+    video.muted = false;
+    video.play()
+  } else {
+    //video.muted = true;
+  }
+});
+</script>
 </body>
 </html>
